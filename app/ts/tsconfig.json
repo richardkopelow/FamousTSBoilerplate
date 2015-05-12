@@ -1,0 +1,8 @@
+{
+	"compilerOptions": {
+		"sourceMap": false,
+		"module":"amd",
+		"outDir":"../src",
+		"declaration": false,
+	}
+}
