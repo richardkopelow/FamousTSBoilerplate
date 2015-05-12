@@ -1,16 +1,16 @@
 interface Transition
 {
-	duration:Number;
+	duration:number;
 	curve:any;
 }
 interface Context
 {
 	add(obj:Object):RenderNode;
 	migrate(container:Node):void;
-	getSize():Number[];
-	setSize(size:Number[],contextParameters:Object):void;
-	getPerspective():Number;
-	setPerspective(perspective:Number,transition?:Object,callback?:any):void;
+	getSize():number[];
+	setSize(size:number[],contextParameters:Object):void;
+	getPerspective():number;
+	setPerspective(perspective:number,transition?:Object,callback?:any):void;
 	emit(type:String,event:Object):EventHandler;
 	on(type:String,fn?:any):EventHandler;
 	removeListener(type:String,handler:any):EventHandler;
@@ -34,8 +34,8 @@ interface Engine
 	on(type:String,fn?:any):EventHandler;
 	emit(type:String,event:Object):EventHandler;
 	removeListener(type:String,handler:any):EventHandler;
-	getFPS():Number;
-	setFPSCap(fps:Number):void;
+	getFPS():number;
+	setFPSCap(fps:number):void;
 	getOptions(key:String):Object;
 	setOptions(options:any):void;
 	createContext(el?:Node):Context;
@@ -79,11 +79,11 @@ interface Modifier
 	sizeFrom(size:Object):Modifier;
 	proportionsFrom(proportions:Object):Modifier;
 	setTransform(transform:Transform,transition?:Transitionable,callback?:any):Modifier;
-	setOpacity(opacity:Number,transition?:Transitionable,callback?:any):Modifier;
-	setOrigin(origin:Number[],transition?:Transitionable,callback?:any):Modifier;
-	setAlign(align:Number[],transition?:Transitionable,callback?:any):Modifier;
-	setSize(size:Number[],transition?:Transitionable,callback?:any):Modifier;
-	setProportions(proportions:Number[],transition?:Transitionable,callback?:any):Modifier;
+	setOpacity(opacity:number,transition?:Transitionable,callback?:any):Modifier;
+	setOrigin(origin:number[],transition?:Transitionable,callback?:any):Modifier;
+	setAlign(align:number[],transition?:Transitionable,callback?:any):Modifier;
+	setSize(size:number[],transition?:Transitionable,callback?:any):Modifier;
+	setProportions(proportions:number[],transition?:Transitionable,callback?:any):Modifier;
 	halt():void;
 	getTransform():Object;
 	getFinalTransform():Transform;
@@ -111,7 +111,7 @@ interface RenderNode
 	add(child:Object):RenderNode;
 	get():Object;
 	set(child:Object):RenderNode;
-	getSize(context:Context):Number[];
+	getSize(context:Context):number[];
 }
 interface Scene
 {
@@ -123,30 +123,30 @@ interface Transform
 {
 	multiply4x4(a:Transform,b:Transform):Transform;
 	multiply(a:Transform,b:Transform):Transform;
-	thenMove(m:Transform,t:Number[]):Transform;
-	moveThen(v:Number[],m:Transform):Transform;
-	translate(x:Number,y:Number,z:Number):Transform;
-	thenScale(m:Transform,s:Number[]):Transform;
-	scale(x:Number,y:Number,z:Number):Transform;
-	rotateX(theta:Number):Transform;
-	rotateY(theta:Number):Transform;
-	rotateZ(theta:Number):Transform;
-	rotate(phi:Number,theta:Number,psi:Number):Transform;
-	rotateAxis(v:Number[],theta:Number):Transform;
-	aboutOrigin(v:Number[],m:Transform):Transform;
-	skew(phi:Number,theta:Number,psi:Number):Transform;
-	skewX(angle:Number):Transform;
-	skewY(angle:Number):Transform;
-	perspective(focusZ:Number):Transform;
-	getTranslate(m:Transform):Number[];
+	thenMove(m:Transform,t:number[]):Transform;
+	moveThen(v:number[],m:Transform):Transform;
+	translate(x:number,y:number,z:number):Transform;
+	thenScale(m:Transform,s:number[]):Transform;
+	scale(x:number,y:number,z:number):Transform;
+	rotateX(theta:number):Transform;
+	rotateY(theta:number):Transform;
+	rotateZ(theta:number):Transform;
+	rotate(phi:number,theta:number,psi:number):Transform;
+	rotateAxis(v:number[],theta:number):Transform;
+	aboutOrigin(v:number[],m:Transform):Transform;
+	skew(phi:number,theta:number,psi:number):Transform;
+	skewX(angle:number):Transform;
+	skewY(angle:number):Transform;
+	perspective(focusZ:number):Transform;
+	getTranslate(m:Transform):number[];
 	inverse(m:Transform):Transform;
 	transpose(m:Transform):Transform;
 	interpret(M:Transform):Object;
-	average(M1:Transform,M2:Transform,t:Number):Transform;
+	average(M1:Transform,M2:Transform,t:number):Transform;
 	build(spec:any):Transform;
 	equals(a:Transform,b:Transform):Boolean;
 	notEquals(a:Transform,b:Transform):Boolean;
-	normalizeRotation(rotation:Number[]):Number[];
+	normalizeRotation(rotation:number[]):number[];
 	inFront():void;
 	behind():void;
 }
@@ -154,21 +154,21 @@ interface View
 {
 	getOptions(key:String):Object;
 	add(child:any):RenderNode;
-	getSize():Number[];
+	getSize():number[];
 }
 interface ViewSequence
 {
 	getPrevious():ViewSequence;
 	getNext():ViewSequence;
-	indexOf():Number;
-	getIndex():Number;
+	indexOf():number;
+	getIndex():number;
 	toString():String;
 	unshift(value:Object):void;
 	push(value:Object):void;
-	splice(index:Number,howMany:Number,value:Object):void;
+	splice(index:number,howMany:number,value:Object):void;
 	swap(other:ViewSequence):void;
 	get():Object;
-	getSize():Number[];
+	getSize():number[];
 }
 interface EventArbiter
 {
@@ -241,46 +241,46 @@ interface Matrix
 interface Quaternion
 {
 	add(q:Quaternion):Quaternion;
-	scalarDivide(s:Number):Quaternion;
+	scalarDivide(s:number):Quaternion;
 	put(q:Quaternion):Quaternion;
 	clone():Quaternion;
 	clear():Quaternion;
 	isEqual(q:Quaternion):Boolean;
-	dot(q:Quaternion):Number;
-	normSquared():Number;
-	norm():Number;
+	dot(q:Quaternion):number;
+	normSquared():number;
+	norm():number;
 	isZero():Boolean;
 	getTransform():Transform;
 	getMatrix():Transform;
-	slerp(q:Quaternion,t:Number):Transform;
+	slerp(q:Quaternion,t:number):Transform;
 }
 interface Random
 {
-	integer(min:Number,max:Number,dim:Number):any;
-	range(min:Number,max:Number,dim:Number):Number;
-	sign(prob:Number):Number;
-	bool(prob:Number):Boolean;
+	integer(min:number,max:number,dim:number):any;
+	range(min:number,max:number,dim:number):number;
+	sign(prob:number):number;
+	bool(prob:number):Boolean;
 }
 interface Utilities
 {
-	clamp(value:Number,range:Number[]):void;
-	length(array:Number[]):void;
+	clamp(value:number,range:number[]):void;
+	length(array:number[]):void;
 }
 interface Vector
 {
 	add(v:Vector):Vector;
 	sub(v:Vector):Vector;
-	mult(r:Number):Vector;
-	div(r:Number):Vector;
+	mult(r:number):Vector;
+	div(r:number):Vector;
 	cross(v:Vector):Vector;
 	equals(v:Vector):Boolean;
-	rotateX(theta:Number):Vector;
-	rotateY(theta:Number):Vector;
-	rotateZ(theta:Number):Vector;
-	dot(v:Vector):Number;
-	normSquared():Number;
-	norm():Number;
-	normalize(length:Number):Vector;
+	rotateX(theta:number):Vector;
+	rotateY(theta:number):Vector;
+	rotateZ(theta:number):Vector;
+	dot(v:Vector):number;
+	normSquared():number;
+	norm():number;
+	normalize(length:number):Vector;
 	clone():Vector;
 	isZero():Boolean;
 	set(v:Object):Vector;
@@ -306,7 +306,7 @@ interface Fader
 	setOptions(options:Object):void;
 	show(transition?:Transition,callback?:any):void;
 	hide(transition?:Transition,callback?:any):void;
-	set(state:Number,transition?:Transition,callback?:any):void;
+	set(state:number,transition?:Transition,callback?:any):void;
 	halt():void;
 	isVisible(target:Object):Boolean;
 }
@@ -318,11 +318,11 @@ interface ModifierChain
 interface StateModifier
 {
 	setTransform(transform:Transform,transition?:Transition,callback?:any):StateModifier;
-	setOpacity(opacity:Number,transition?:Transition,callback?:any):StateModifier;
-	setOrigin(origin:Number[],transition?:Transition,callback?:any):StateModifier;
-	setAlign(align:Number[],transition?:Transition,callback?:any):StateModifier;
-	setSize(size:Number[],transition?:Transition,callback?:any):StateModifier;
-	setProportions(proportions:Number[],transition?:Transition,callback?:any):StateModifier;
+	setOpacity(opacity:number,transition?:Transition,callback?:any):StateModifier;
+	setOrigin(origin:number[],transition?:Transition,callback?:any):StateModifier;
+	setAlign(align:number[],transition?:Transition,callback?:any):StateModifier;
+	setSize(size:number[],transition?:Transition,callback?:any):StateModifier;
+	setProportions(proportions:number[],transition?:Transition,callback?:any):StateModifier;
 	halt():void;
 	getTransform():Object;
 	getFinalTransform():Transform;
@@ -337,20 +337,20 @@ interface Body
 	setMomentsOfInertia():void;
 	updateAngularVelocity():void;
 	toWorldCoordinates(localPosition:Vector):Vector;
-	getEnergy():Number;
+	getEnergy():number;
 	reset(p:any,v:any,q:any,L:any):void;
 	setOrientation(q:any):void;
 	setAngularVelocity(w:any):void;
 	setAngularMomentum(L:any):void;
 	applyForce(force:Vector,location:Vector):void;
 	applyTorque(torque:Vector):void;
-	getTransform(dt:Number):Transform;
-	integrateAngularMomentum(dt:Number):void;
-	integrateOrientation(dt:Number):void;
+	getTransform(dt:number):Transform;
+	integrateAngularMomentum(dt:number):void;
+	integrateOrientation(dt:number):void;
 }
 interface Circle
 {
-	setRadius(r:Number):void;
+	setRadius(r:number):void;
 }
 interface Particle
 {
@@ -359,21 +359,21 @@ interface Particle
 	sleep():void;
 	wake():void;
 	setPosition(position:any):void;
-	setPosition1D(x:Number):void;
+	setPosition1D(x:number):void;
 	getPosition():any[];
-	getPosition1D():Number;
+	getPosition1D():number;
 	():void;
-	setVelocity1D(x:Number):void;
+	setVelocity1D(x:number):void;
 	getVelocity():any[];
 	setForce():any[];
-	getVelocity1D():Number;
-	setMass(mass:Number):void;
-	getMass():Number;
+	getVelocity1D():number;
+	setMass(mass:number):void;
+	getMass():number;
 	reset(position:any,velocity:any):void;
 	applyForce(force:Vector):void;
 	applyImpulse(impulse:Vector):void;
-	integrateVelocity(dt:Number):void;
-	integratePosition(dt:Number):void;
+	integrateVelocity(dt:number):void;
+	integratePosition(dt:number):void;
 	():void;
 	getTransform():Transform;
 	modify(target:any):any;
@@ -384,43 +384,43 @@ interface Rectangle
 }
 interface Collision
 {
-	applyConstraint(targets:Body[],source:Body,dt:Number):void;
+	applyConstraint(targets:Body[],source:Body,dt:number):void;
 }
 interface Constraint
 {
-	getEnergy():Number;
+	getEnergy():number;
 }
 interface Curve
 {
 	undefined():void;
-	applyConstraint(targets:Body[],source:Body,dt:Number):void;
+	applyConstraint(targets:Body[],source:Body,dt:number):void;
 }
 interface Distance
 {
 	undefined():void;
 	setOptions(anchor:any[]):void;
-	applyConstraint(targets:Body[],source:Body,dt:Number):void;
+	applyConstraint(targets:Body[],source:Body,dt:number):void;
 }
 interface Snap
 {
 	undefined():void;
-	getEnergy(targets:Body,source:Body):Number;
-	applyConstraint(targets:Body[],source:Body,dt:Number):void;
+	getEnergy(targets:Body,source:Body):number;
+	applyConstraint(targets:Body[],source:Body,dt:number):void;
 }
 interface Surface
 {
 	undefined():void;
-	applyConstraint(targets:Body[],source:Body,dt:Number):void;
+	applyConstraint(targets:Body[],source:Body,dt:number):void;
 }
 interface Wall
 {
 	REFLECT():void;
 	SILENT():void;
-	applyConstraint(targets:Body[],source:Body,dt:Number):void;
+	applyConstraint(targets:Body[],source:Body,dt:number):void;
 }
 interface Walls
 {
-	applyConstraint(targets:Body[],source:Body,dt:Number):void;
+	applyConstraint(targets:Body[],source:Body,dt:number):void;
 	applyConstraint(fn:any):void;
 	applyConstraint(angle:any):void;
 	applyConstraint(angle:any):void;
@@ -439,14 +439,14 @@ interface Drag
 interface Force
 {
 	setOptions(options:Object):void;
-	getEnergy():Number;
+	getEnergy():number;
 }
 interface Repulsion
 {
-	LINEAR(r:Number,cutoff:Number):void;
-	MORSE(r:Number,cutoff:Number):void;
-	INVERSE(r:Number,cutoff:Number):void;
-	GRAVITY(r:Number,cutoff:Number):void;
+	LINEAR(r:number,cutoff:number):void;
+	MORSE(r:number,cutoff:number):void;
+	INVERSE(r:number,cutoff:number):void;
+	GRAVITY(r:number,cutoff:number):void;
 	strength():void;
 	anchor():void;
 	radii():void;
@@ -470,8 +470,8 @@ interface RotationalSpring
 interface Spring
 {
 	undefined():void;
-	FENE(dist:Number,rMax:Number):Number;
-	FENE(dist:Number):Number;
+	FENE(dist:number,rMax:number):number;
+	FENE(dist:number):number;
 	period():void;
 	dampingRatio():void;
 	length():void;
@@ -480,11 +480,11 @@ interface Spring
 	forceFunction():void;
 	setOptions(options:Object):void;
 	applyForce(targets:Body[]):void;
-	getEnergy(targets:any):Number;
+	getEnergy(targets:any):number;
 }
 interface VectorField
 {
-	CONSTANT(v:Vector,options:Object):Number;
+	CONSTANT(v:Vector,options:Object):number;
 	LINEAR(v:Vector):Vector;
 	RADIAL(v:Vector):Vector;
 	POINT_ATTRACTOR(v:Vector,options:Object):Vector;
@@ -503,7 +503,7 @@ interface PhysicsEngine
 	setOptions(opts:Object):void;
 	addBody(body:Body):Body;
 	removeBody(body:Body):void;
-	attach(agents:any[],targets:Body[],source:Body):Number;
+	attach(agents:any[],targets:Body[],source:Body):number;
 	attachTo(agentID:any,target:Body):void;
 	detach(id:any):void;
 	detach(id:any,target:Body):void;
@@ -512,11 +512,11 @@ interface PhysicsEngine
 	getParticles():Particle[];
 	getBodies():any[];
 	getBodies():any[];
-	forEachParticle(fn:any,dt:Number):void;
-	forEachBody(fn:any,dt:Number):void;
-	forEach(fn:any,dt:Number):void;
-	getAgentEnergy(agentId:Number):Number;
-	getEnergy():Number;
+	forEachParticle(fn:any,dt:number):void;
+	forEachBody(fn:any,dt:number):void;
+	forEach(fn:any,dt:number):void;
+	getAgentEnergy(agentId:number):number;
+	getEnergy():number;
 	step():void;
 	isSleeping():Boolean;
 	isActive():Boolean;
@@ -531,7 +531,7 @@ interface CanvasSurface
 }
 interface ContainerSurface
 {
-	add(obj:Object,target:Node,context:Context,transform:Transform,opacity:Number,origin:Number[],size:Number[]):RenderNode;
+	add(obj:Object,target:Node,context:Context,transform:Transform,opacity:number,origin:number[],size:number[]):RenderNode;
 }
 interface ImageSurface
 {
@@ -558,8 +558,8 @@ interface TextareaSurface
 	setName(str:String):TextareaSurface;
 	getName():String;
 	setWrap(str:String):TextareaSurface;
-	setColumns(num:Number):TextareaSurface;
-	setRows(num:Number,target:Node):TextareaSurface;
+	setColumns(num:number):TextareaSurface;
+	setRows(num:number,target:Node):TextareaSurface;
 }
 interface VideoSurface
 {
@@ -628,7 +628,7 @@ interface SpringTransition
 	period():void;
 	dampingRatio():void;
 	velocity():void;
-	reset(pos:Number[],vel:any):void;
+	reset(pos:number[],vel:any):void;
 	getVelocity():any;
 	setVelocity():any;
 	isActive():Boolean;
@@ -638,10 +638,10 @@ interface SpringTransition
 }
 interface Transitionable
 {
-	set(endState:Number|Object[],transition?:Transition,callback?:any):void;
-	reset(startState:Number|Object[]):void;
-	delay(duration:Number,callback?:any):void;
-	get(timestamp:Number):any;
+	set(endState:number|Object[],transition?:Transition,callback?:any):void;
+	reset(startState:number|Object[]):void;
+	delay(duration:number,callback?:any):void;
+	get(timestamp:number):any;
 	isActive():Boolean;
 	halt():void;
 }
@@ -666,11 +666,11 @@ interface TweenTransition
 	getCurve(curveName:String):any;
 	getCurves():Object;
 	setOptions(options:Object):void;
-	set(endValue:Number|Object[],transition?:Transition,callback?:any):void;
-	reset(startValue:Number|Object[],startVelocity:Number):void;
-	getVelocity():Number;
-	get(timestamp:Number):any;
-	update(timestamp:Number):void;
+	set(endValue:number|Object[],transition?:Transition,callback?:any):void;
+	reset(startValue:number|Object[],startVelocity:number):void;
+	getVelocity():number;
+	get(timestamp:number):any;
+	update(timestamp:number):void;
 	isActive():Boolean;
 	halt():void;
 }
@@ -690,17 +690,17 @@ interface WallTransition
 }
 interface Timer
 {
-	setTimeout(fn:any,duration:Number):Function;
-	setInterval(fn:any,duration:Number):Function;
-	after(fn:any,numTicks:Number):Function;
-	every(fn:any,numTicks:Number):Function;
+	setTimeout(fn:any,duration:number):Function;
+	setInterval(fn:any,duration:number):Function;
+	after(fn:any,numTicks:number):Function;
+	every(fn:any,numTicks:number):Function;
 	clear(fn:any):void;
-	debounce(func:any,wait:Number):Function;
+	debounce(func:any,wait:number):Function;
 }
 interface Utility
 {
 	Direction():void;
-	after(count:Number,callback?:any):Function;
+	after(count:number,callback?:any):Function;
 	loadURL(url:String,callback?:any):void;
 	createDocumentFragmentFromHTML(html:String):DocumentFragment;
 }
@@ -722,10 +722,10 @@ interface DrawerLayout
 	setOptions(options:Object):void;
 	open(transition?:any,callback?:any):void;
 	close(transition?:any,callback?:any):void;
-	setPosition(position:Number,transition?:any,callback?:any):void;
-	getPosition():Number;
-	setProgress(progress:Number,transition?:any,callback?:any):void;
-	getProgress():Number;
+	setPosition(position:number,transition?:any,callback?:any):void;
+	getPosition():number;
+	setProgress(progress:number,transition?:any,callback?:any):void;
+	getProgress():number;
 	toggle(transition?:any):void;
 	reset(transition?:any):void;
 	isOpen():Boolean;
@@ -733,7 +733,7 @@ interface DrawerLayout
 interface EdgeSwapper
 {
 	show(content:Object):void;
-	setOptions(options:any,context:Context):Number;
+	setOptions(options:any,context:Context):number;
 }
 interface FlexibleLayout
 {
@@ -745,10 +745,10 @@ interface FlexibleLayout
 interface Flipper
 {
 	flip(transition?:Object,callback?:any):void;
-	setAngle(angle:Number,transition?:Object,callback?:any):void;
+	setAngle(angle:number,transition?:Object,callback?:any):void;
 	setOptions(options:any):void;
 	setFront(node:Object):void;
-	setBack(node:Object):Number;
+	setBack(node:Object):number;
 }
 interface GridLayout
 {
@@ -764,7 +764,7 @@ interface Lightbox
 {
 	setOptions(options:any):void;
 	show(renderable:Object,transition?:Transition,callback?:any):void;
-	hide(transition?:Transition,callback?:any):Number;
+	hide(transition?:Transition,callback?:any):number;
 }
 interface RenderController
 {
@@ -777,7 +777,7 @@ interface RenderController
 	outOriginFrom(origin:any):void;
 	outAlignFrom(align:any):void;
 	show(renderable:Object,transition?:Transition,callback?:any):void;
-	hide(transition?:Transition,callback?:any):Number;
+	hide(transition?:Transition,callback?:any):number;
 }
 interface ScrollContainer
 {
@@ -800,17 +800,17 @@ interface Scrollview
 	undefined():void;
 	undefined():void;
 	undefined():void;
-	getCurrentIndex():Number;
+	getCurrentIndex():number;
 	goToPreviousPage():ViewSequence;
 	goToNextPage():ViewSequence;
 	goToPage():void;
-	getPosition(node:Number):Number;
-	getAbsolutePosition():Number;
-	getOffset(node:Number):Number;
-	setPosition(x:Number):void;
-	setPosition(x:Number):void;
-	getVelocity():Number;
-	setVelocity(v:Number):void;
+	getPosition(node:number):number;
+	getAbsolutePosition():number;
+	getOffset(node:number):number;
+	setPosition(x:number):void;
+	setPosition(x:number):void;
+	getVelocity():number;
+	setVelocity(v:number):void;
 	setOptions(options:any):void;
 	sequenceFrom(node:any):void;
 	getSize():any[];
@@ -820,7 +820,7 @@ interface SequentialLayout
 	getSize():any[];
 	sequenceFrom(items:any):void;
 	setOptions(options:any):void;
-	setOutputFunction(outputFunction:any,parentSpec:Object):Number;
+	setOutputFunction(outputFunction:any,parentSpec:Object):number;
 }
 interface NavigationBar
 {
