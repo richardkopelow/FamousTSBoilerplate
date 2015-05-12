@@ -317,12 +317,12 @@ interface ModifierChain
 }
 interface StateModifier
 {
-	setTransform(transform:Transform,transition?:Transitionable,callback?:any):StateModifier;
-	setOpacity(opacity:Number,transition?:Transitionable,callback?:any):StateModifier;
-	setOrigin(origin:Number[],transition?:Transitionable,callback?:any):StateModifier;
-	setAlign(align:Number[],transition?:Transitionable,callback?:any):StateModifier;
-	setSize(size:Number[],transition?:Transitionable,callback?:any):StateModifier;
-	setProportions(proportions:Number[],transition?:Transitionable,callback?:any):StateModifier;
+	setTransform(transform:Transform,transition?:Transition,callback?:any):StateModifier;
+	setOpacity(opacity:Number,transition?:Transition,callback?:any):StateModifier;
+	setOrigin(origin:Number[],transition?:Transition,callback?:any):StateModifier;
+	setAlign(align:Number[],transition?:Transition,callback?:any):StateModifier;
+	setSize(size:Number[],transition?:Transition,callback?:any):StateModifier;
+	setProportions(proportions:Number[],transition?:Transition,callback?:any):StateModifier;
 	halt():void;
 	getTransform():Object;
 	getFinalTransform():Transform;
@@ -573,36 +573,36 @@ interface CachedMap
 }
 interface Easing
 {
-	inQuad():void;
-	outQuad():void;
-	inOutQuad():void;
-	inCubic():void;
-	outCubic():void;
-	inOutCubic():void;
-	inQuart():void;
-	outQuart():void;
-	inOutQuart():void;
-	inQuint():void;
-	outQuint():void;
-	inOutQuint():void;
-	inSine():void;
-	outSine():void;
-	inOutSine():void;
-	inExpo():void;
-	outExpo():void;
-	inOutExpo():void;
-	inCirc():void;
-	outCirc():void;
-	inOutCirc():void;
-	inElastic():void;
-	outElastic():void;
-	inOutElastic():void;
-	inBack():void;
-	outBack():void;
-	inOutBack():void;
-	inBounce():void;
-	outBounce():void;
-	inOutBounce():void;
+	inQuad():any;
+	outQuad():any;
+	inOutQuad():any;
+	inCubic():any;
+	outCubic():any;
+	inOutCubic():any;
+	inQuart():any;
+	outQuart():any;
+	inOutQuart():any;
+	inQuint():any;
+	outQuint():any;
+	inOutQuint():any;
+	inSine():any;
+	outSine():any;
+	inOutSine():any;
+	inExpo():any;
+	outExpo():any;
+	inOutExpo():any;
+	inCirc():any;
+	outCirc():any;
+	inOutCirc():any;
+	inElastic():any;
+	outElastic():any;
+	inOutElastic():any;
+	inBack():any;
+	outBack():any;
+	inOutBack():any;
+	inBounce():any;
+	outBounce():any;
+	inOutBounce():any;
 }
 interface MultipleTransition
 {
