@@ -11,7 +11,6 @@ import Famous=require('./Famous');
         // your app here
         mainContext.setPerspective(1000);
         
-        mainContext.add(s);
         var logo = new Famous.ImageSurface({
             size: [200, 200],
             content: '/content/images/famous_logo.png',
