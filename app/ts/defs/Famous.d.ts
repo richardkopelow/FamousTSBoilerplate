@@ -523,21 +523,21 @@ interface PhysicsEngine
 	sleep():void;
 	wake():void;
 }
-interface CanvasSurface
+interface CanvasSurface extends Surface
 {
 	setContent(target:Node):void;
 	getContext(contextId:String):void;
 	setSize(size:number[],canvasSize:number[]):void;
 }
-interface ContainerSurface
+interface ContainerSurface extends Surface
 {
 	add(obj:Object,target:Node,context:Context,transform:Transform,opacity:number,origin:number[],size:number[]):RenderNode;
 }
-interface ImageSurface
+interface ImageSurface extends Surface
 {
 	setContent(imageUrl:String,target:Node):void;
 }
-interface InputSurface
+interface InputSurface extends Surface
 {
 	setPlaceholder(str:String):InputSurface;
 	focus():InputSurface;
@@ -548,7 +548,7 @@ interface InputSurface
 	setName(str:String):InputSurface;
 	getName(target:Node):String;
 }
-interface TextareaSurface
+interface TextareaSurface extends Surface
 {
 	setPlaceholder(str:String):TextareaSurface;
 	focus():TextareaSurface;
@@ -561,7 +561,7 @@ interface TextareaSurface
 	setColumns(num:number):TextareaSurface;
 	setRows(num:number,target:Node):TextareaSurface;
 }
-interface VideoSurface
+interface VideoSurface extends Surface
 {
 	setOptions(options:Object):void;
 	setContent(videoUrl:String,target:Node):void;
