@@ -3,6 +3,6 @@
 		"sourceMap": false,
 		"module":"amd",
 		"outDir":"../src",
-		"declaration": false,
+		"declaration": false
 	}
 }
