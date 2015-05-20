@@ -25,6 +25,7 @@ npm install -g grunt-cli bower
 
 ##Getting Started
 
+First build the TypeScript code, then run
 ```
 npm install && bower install
 ```
