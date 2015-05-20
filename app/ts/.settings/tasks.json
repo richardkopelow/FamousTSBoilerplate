@@ -19,7 +19,7 @@
 	
 	// Under windows use tsc.exe. This ensures we don't need a shell.
 	"windows": {
-		"command": "C:\\Users\\Class2018\\tsc\\1.5\\tsc.exe"//"tsc.exe"
+		"command": "tsc.exe"
 	},
 	
 	"isShellCommand": true,
