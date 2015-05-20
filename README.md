@@ -3,6 +3,15 @@
 
 [![Build Status](https://travis-ci.org//famoustsboilerplate.svg?branch=master)](https://travis-ci.org//famoustsboilerplate) [![Dependency Status](https://david-dm.org//famoustsboilerplate.svg)](https://david-dm.org//famoustsboilerplate) [![devDependency Status](https://david-dm.org//famoustsboilerplate/dev-status.svg)](https://david-dm.org//famoustsboilerplate#info=devDependencies)
 
+##Getting Started
+This is the yo famous boiler plate project ported to TypeScript. There is a new folder("ts") under "app" for all the TypeScript source code. The project is set up to use the TypeScript 1.5 compiler, older ones can work, the build settings will just not work with older versions. The project is set up to build Javascript code into the "src" folder allowing all other systems such as grunt to function unaltered.
+
+When building the typescript code, build from the "ts" folder.
+
+The definition files for Famous are pretty accurate and allow you to import Famous modules with the same require paths that you are used, as well as gaining prompting and the ability to extend Famous classes in TypeScript. That being said, the definitions are not all perfect and I am actively working to clean them up. Please report any problems in the issue tracker and I will be happy to fix them.
+
+For those who like to work in VS Code, simply open the "ts" folder and you are good to go.
+
 ##Dependencies
 It is actually quite simple really
 
