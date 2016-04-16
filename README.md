@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org//famoustsboilerplate.svg?branch=master)](https://travis-ci.org//famoustsboilerplate) [![Dependency Status](https://david-dm.org//famoustsboilerplate.svg)](https://david-dm.org//famoustsboilerplate) [![devDependency Status](https://david-dm.org//famoustsboilerplate/dev-status.svg)](https://david-dm.org//famoustsboilerplate#info=devDependencies)
 
 ##Intro
-This is the yo famous boiler plate project ported to TypeScript. There is a new folder("ts") under "app" for all the TypeScript source code. The project is set up to use the TypeScript 1.5 compiler, older ones can work, the build settings will just not work with older versions. The project is set up to build Javascript code into the "src" folder allowing all other systems such as grunt to function unaltered.
+This is the yo famous boiler plate project ported to TypeScript. This version of Famous is deprecated, though I still like it. There is a new folder("ts") under "app" for all the TypeScript source code. The project is set up to use the TypeScript 1.5 compiler, older ones can work, the build settings will just not work with older versions. The project is set up to build Javascript code into the "src" folder allowing all other systems such as grunt to function unaltered.
 
 When building the typescript code, build from the "ts" folder.
 
@@ -55,9 +55,6 @@ If you would like to compile your project for distribution simply run the comman
 While the default style guidelines are fairly strict, we are doing so with reason.  Famo.us is not only a framework for creating cutting edge web application, but a community project that we are all going to contribute to in the hopes of making the web better.  We truly believe that having consistent style within the community will make it easier for individuals to jump between different Famo.us modules without having to waste valuable time on processing style.
 
 While our Package Manager (which is currently in development) will enforce our style guide if you would like to publish a module, feel free to disable eslint or jscs as you see fit.  If you want to disable linting you will need to comment out lines 18 - 19 in ```grunt/aliases.js```
-
-## Contributing
-All contributions are welcome! The simplest way to show your support for this project is to **"star" it**.
 
 ##License
 ISC
