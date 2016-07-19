@@ -8,7 +8,7 @@ This is the yo famous boiler plate project ported to TypeScript. This version of
 
 When building the typescript code, build from the "ts" folder.
 
-The definition files for Famous are pretty accurate and allow you to import Famous modules with the same require paths that you are used, as well as gaining prompting and the ability to extend Famous classes in TypeScript. That being said, the definitions are not all perfect and I am actively working to clean them up. Please report any problems in the issue tracker and I will be happy to fix them.
+The definition files for Famous are pretty accurate and allow you to import Famous modules with the same require paths that you are used to, as well as gaining prompting and the ability to extend Famous classes in TypeScript. That being said, the definitions are not all perfect and I am actively working to clean them up. Please report any problems in the issue tracker and I will be happy to fix them.
 
 For those who like to work in VS Code, simply open the "ts" folder and you are good to go.
 
